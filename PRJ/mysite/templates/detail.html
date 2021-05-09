@@ -1,0 +1,13 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block content %}
+<h3>{{NEWS.NEWS.title}}</h3>
+<h4>{{NEWS.NEWS.text}}</h4>
+<h4>{{NEWS.NEWS.date}}</h4>
+<form action="{% url 'mysite:add_comment' NEWS.id %}" method="POST" id="frm">
+    {% csrf_token %}
+    <input type="text" required placeholder="Введите имя" name="name"><br>
+    <textarea name="text" placeholder="Текст комментария" cols="100" rows="10"></textarea><br>
+    <button type="submit">Оставить комментарий</button>
+</form>
+{% endblock %}

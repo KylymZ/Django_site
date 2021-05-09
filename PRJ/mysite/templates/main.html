@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/st1.css' %}" />
+    <html>
+        <head>
+        <title>Об аниме</title>
+        </head>
+        <body>
+            <style>
+            li {
+              text-decoration: none;
+              display: block;
+              position: relative;
+              font-size: 30px;
+              font-family: 'Arimo', sans-serif;
+              font-weight: bold;
+              color: #041806;
+              transition:.3s linear;	   
+            }
+            body {
+    background-color: rgba(24, 34, 1, 0.877);
+}
+.top-menu {
+    background:  rgba(32, 43, 6, 0.877);
+  }
+  .top-menu:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .navbar-logo {display: inline-block;}
+  .menu-main {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+  }
+  .menu-main li {display: inline-block;}
+  .menu-main a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    line-height: 61px;
+    padding-left: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    color: #24f736;
+    transition:.3s linear;
+  }
+  .menu-main a:before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: #f77824;
+    position: absolute;
+    left: 50%;
+    transform: rotate(45deg) translateX(6.5px);
+    opacity: 0;
+    transition: .3s linear;
+  }
+  .menu-main a:hover:before {opacity: 1;}
+  
+  @media (max-width: 1064px) {
+  .menu-main {
+      float: none;
+      padding-top: 20px;
+  }
+  
+  
+  .top-menu {
+    text-align: center;
+    padding: 20px 0 0 0;
+  }
+  .menu-main a {padding: 0 10px;}
+  .menu-main a:before {transform: rotate(45deg) translateX(-6px);}
+  }
+  @media (max-width: 600px) {
+  .menu-main li {display: block;}
+  }
+
+  #s{
+      text-align: center;
+      font-size: 50px;
+  }
+
+  .text{
+      font-size: 30px;
+      color: steelblue;
+      text-align: center;
+  }
+
+  #td{
+      color: rgb(0, 0, 0);
+  }
+
+            </style>
+            <nav class="top-menu">
+                <ul class="menu-main">
+                  <li><a href="/site">Главная страница</a></li>
+                </ul>
+              </nav>
+              {% block content %}
+              {% endblock %}
+        </body>
+ </html>

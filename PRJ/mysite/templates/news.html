@@ -1,0 +1,35 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block content %}
+    {% for i in NEWS %}
+        <div class="page-header">
+            <h3>{{ i.title }}</h3>
+            <h4>{{ i.text }}</h3>
+        </div>
+    {% endfor %}
+    <style type="text/css">
+        #layer1 {
+         width: 100%;/* Ширина слоя */
+         background: rgb(75, 90, 63); /* Цвет фона */
+         height: 100%; /* Высота слоя */
+         padding: 5px; /* Поля вокруг текста */
+        }
+       </style>
+        <hr>
+    <div id="layer1">
+        <h4>Комментарии: </h4>
+        {% for i in Comment %}
+        <div class="page">
+            <p>Автор: </p><h5>{{ i.author_name }}</h3>
+            <p>Текст: </p><h5>{{ i.com_text }}</h3>
+        </div>
+        {% endfor %}
+        <h1>Добавить комментарий: </h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Оставить</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>
